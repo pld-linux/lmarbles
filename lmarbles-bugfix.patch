@@ -1,0 +1,26 @@
+--- lmarbles-1.0.6/src/cfg.c.orig	2002-11-24 16:56:08.000000000 +0100
++++ lmarbles-1.0.6/src/cfg.c	2004-03-15 00:58:15.922779952 +0100
+@@ -41,9 +41,9 @@
+ {
+     DIR *dir;
+ #ifdef _WIN32
+-    snprintf( c_pth, strlen(c_pth)-1, "%s/lgames", (getenv( "HOME" )?getenv( "HOME" ):".") );
++    snprintf( c_pth, sizeof(c_pth) - strlen("/lmarbles.conf"), "%s/lgames", (getenv( "HOME" )?getenv( "HOME" ):".") );
+ #else
+-    snprintf( c_pth, strlen(c_pth)-1, "%s/.lgames", getenv( "HOME" ) );
++    snprintf( c_pth, sizeof(c_pth) - strlen("/lmarbles.conf"), "%s/.lgames", getenv( "HOME" ) );
+ #endif
+     /* create .lgames directory if not found */
+     if ( (dir = opendir( c_pth )) == 0 ) {
+@@ -142,7 +142,11 @@
+     FILE	*f = fopen(c_pth, "w");
+ #ifdef ASCII
+     char    str[256];
++#endif
+ 
++    if(f == NULL)
++	    return;
++#ifdef ASCII
+     F_WrtE(f, "ascii");
+     F_WrtE(f, cfg.prf_nm);
+     F_IntToStr(str, cfg.prf); F_WrtE(f, str);
