@@ -9,7 +9,7 @@ Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/lgames/%{name}-%{version}.tar.gz
 # Source0-md5:	b29156bc5021877d080e5e268012f4ec
 Patch0:		%{name}-bugfix.patch
-URL:		http://lgames.sourceforge.net/marbles/marbles.html
+URL:		http://lgames.sourceforge.net/index.php?project=LMarbles
 BuildRequires:	SDL-devel >= 1.0.0
 BuildRequires:	SDL_mixer-devel >= 1.0.0
 BuildRequires:	autoconf >= 2.13
