@@ -2,19 +2,22 @@ Summary:	Atomix-like game of moving marbles in puzzles
 Summary(pl):	Gra podobna do Atomiksa, polegaj±ca na przesuwaniu klocków w uk³adankach
 Summary(pt_BR):	Jogo tipo Atomix, de mover bolas de gude em labirintos
 Name:		lmarbles
-Version:	1.0.6
-Release:	2
+Version:	1.0.7
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/lgames/%{name}-%{version}.tar.gz
-# Source0-md5:	ad162da8fa298cac680e13c02fea258c
+# Source0-md5:	b29156bc5021877d080e5e268012f4ec
 Patch0:		%{name}-bugfix.patch
 URL:		http://lgames.sourceforge.net/marbles/marbles.html
 BuildRequires:	SDL-devel >= 1.0.0
+BuildRequires:	SDL_mixer-devel >= 1.0.0
 BuildRequires:	autoconf >= 2.13
 BuildRequires:	automake
 Obsoletes:	marbles
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_localstatedir	/var/games
 
 %description
 Marbles is very similiar to Atomix and was heavily inspired by it.
@@ -59,18 +62,15 @@ ficar mais interessante, há alguns obstáculos como caminhos de mão
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure \
-	--with-profile-path=/var/games
+%configure
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/var/games
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-mv -f $RPM_BUILD_ROOT/var/games/{marbles,lmarbles}.prfs
 
 %clean
 rm -rf $RPM_BUILD_ROOT
