@@ -3,14 +3,16 @@ Summary(pl):	Gra podobna do Atomiksa, polegaj±ca na przesuwaniu klocków w uk³ada
 Summary(pt_BR):	Jogo tipo Atomix, de mover bolas de gude em labirintos
 Name:		lmarbles
 Version:	1.0.6
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/lgames/%{name}-%{version}.tar.gz
 # Source0-md5:	ad162da8fa298cac680e13c02fea258c
+Patch0:		%{name}-bugfix.patch
 URL:		http://lgames.sourceforge.net/marbles/marbles.html
 BuildRequires:	SDL-devel >= 1.0.0
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.13
+BuildRequires:	automake
 Obsoletes:	marbles
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,9 +49,16 @@ ficar mais interessante, há alguns obstáculos como caminhos de mão
 
 %prep
 %setup -q
+%patch0 -p1
+
+%{__perl} -pi -e 's@^inst_dir="\$datadir/games/lmarbles"@inst_dir="\$datadir/lmarbles"@' \
+	configure.in
 
 %build
+%{__aclocal}
 %{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--with-profile-path=/var/games
 %{__make}
@@ -75,6 +84,6 @@ fi
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README src/manual
 %attr(2755,root,games) %{_bindir}/lmarbles
-%{_datadir}/games/lmarbles
+%{_datadir}/lmarbles
 %{_mandir}/man6/*
 %attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/%{name}.prfs
