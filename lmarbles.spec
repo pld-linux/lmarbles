@@ -86,4 +86,4 @@ fi
 %attr(2755,root,games) %{_bindir}/lmarbles
 %{_datadir}/lmarbles
 %{_mandir}/man6/*
-%attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/%{name}.prfs
+%attr(664,root,games) %config(noreplace) %verify(not md5 mtime size) /var/games/%{name}.prfs
