@@ -1,6 +1,6 @@
 Summary:	Atomix-like game of moving marbles in puzzles
-Summary(pl):	Gra podobna do Atomiksa, polegaj±ca na przesuwaniu klocków w uk³adankach
-Summary(pt_BR):	Jogo tipo Atomix, de mover bolas de gude em labirintos
+Summary(pl.UTF-8):   Gra podobna do Atomiksa, polegajÄ…ca na przesuwaniu klockÃ³w w ukÅ‚adankach
+Summary(pt_BR.UTF-8):   Jogo tipo Atomix, de mover bolas de gude em labirintos
 Name:		lmarbles
 Version:	1.0.7
 Release:	1
@@ -29,26 +29,26 @@ will not stop until it hits a wall or marble. And to make it even more
 interesting there are obstacles like arrows, crumbling walls and
 teleports!
 
-%description -l pl
-Marbles to gra bardzo podobna do Atomiksa, w du¿ym stopniu nim
+%description -l pl.UTF-8
+Marbles to gra bardzo podobna do Atomiksa, w duÅ¼ym stopniu nim
 inspirowana. Celem jest stworzenie bardziej lub mniej skomplikowanej
-figury z pojedynczych klocków w ograniczonym czasie, aby przej¶æ do
-nastêpnego poziomu.
+figury z pojedynczych klockÃ³w w ograniczonym czasie, aby przejÅ›Ä‡ do
+nastÄ™pnego poziomu.
 
-Wydaje siê ³atwe? Hm, jest pewien problem: je¶li klocek zaczyna siê
-ruszaæ, nie zatrzymuje siê, dopóki nie uderzy w ¶cianê lub inny
-klocek. Aby gra by³a jeszcze bardziej interesuj±ca, s± przeszkody w
-rodzaju strza³ek, pêkaj±cych ¶cian i teleportów!
+Wydaje siÄ™ Å‚atwe? Hm, jest pewien problem: jeÅ›li klocek zaczyna siÄ™
+ruszaÄ‡, nie zatrzymuje siÄ™, dopÃ³ki nie uderzy w Å›cianÄ™ lub inny
+klocek. Aby gra byÅ‚a jeszcze bardziej interesujÄ…ca, sÄ… przeszkody w
+rodzaju strzaÅ‚ek, pÄ™kajÄ…cych Å›cian i teleportÃ³w!
 
-%description -l pt_BR
-O Marbles é muito parecido com o jogo Atomix, pois foi inspirado nele.
-O objetivo é criar uma figura de bolas de gude mais ou menos complexa
+%description -l pt_BR.UTF-8
+O Marbles Ã© muito parecido com o jogo Atomix, pois foi inspirado nele.
+O objetivo Ã© criar uma figura de bolas de gude mais ou menos complexa
 dentro de um limite de tempo.
 
-Parece fácil? Bem, há um problema: quando uma bolinha de gude começa a
-se mover, só pára quando bate em uma parede ou outra bolinha. E para
-ficar mais interessante, há alguns obstáculos como caminhos de mão
-única, paredes que desmoronam e teletransporte!
+Parece fÃ¡cil? Bem, hÃ¡ um problema: quando uma bolinha de gude comeÃ§a a
+se mover, sÃ³ pÃ¡ra quando bate em uma parede ou outra bolinha. E para
+ficar mais interessante, hÃ¡ alguns obstÃ¡culos como caminhos de mÃ£o
+Ãºnica, paredes que desmoronam e teletransporte!
 
 %prep
 %setup -q
