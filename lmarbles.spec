@@ -1,6 +1,6 @@
 Summary:	Atomix-like game of moving marbles in puzzles
-Summary(pl.UTF-8):   Gra podobna do Atomiksa, polegająca na przesuwaniu klocków w układankach
-Summary(pt_BR.UTF-8):   Jogo tipo Atomix, de mover bolas de gude em labirintos
+Summary(pl.UTF-8):	Gra podobna do Atomiksa, polegająca na przesuwaniu klocków w układankach
+Summary(pt_BR.UTF-8):	Jogo tipo Atomix, de mover bolas de gude em labirintos
 Name:		lmarbles
 Version:	1.0.7
 Release:	1
