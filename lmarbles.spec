@@ -2,14 +2,14 @@ Summary:	Atomix-like game of moving marbles in puzzles
 Summary(pl.UTF-8):	Gra podobna do Atomiksa, polegająca na przesuwaniu klocków w układankach
 Summary(pt_BR.UTF-8):	Jogo tipo Atomix, de mover bolas de gude em labirintos
 Name:		lmarbles
-Version:	1.0.7
+Version:	1.0.8
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/lgames/%{name}-%{version}.tar.gz
-# Source0-md5:	b29156bc5021877d080e5e268012f4ec
+Source0:	http://downloads.sourceforge.net/lgames/%{name}-%{version}.tar.gz
+# Source0-md5:	2735ef0cbf39ac79194321ff49e02f0e
 Patch0:		%{name}-bugfix.patch
-URL:		http://lgames.sourceforge.net/index.php?project=LMarbles
+URL:		http://lgames.sourceforge.net/LMarbles
 BuildRequires:	SDL-devel >= 1.0.0
 BuildRequires:	SDL_mixer-devel >= 1.0.0
 BuildRequires:	autoconf >= 2.13
@@ -57,6 +57,8 @@ ficar mais interessante, há alguns obstáculos como caminhos de mão
 %{__perl} -pi -e 's@^inst_dir="\$datadir/games/lmarbles"@inst_dir="\$datadir/lmarbles"@' \
 	configure.in
 
+%{__perl} -pi -e 's@\$\(datadir\)/icons@\$(datadir)/pixmaps@' Makefile.am
+
 %build
 %{__aclocal}
 %{__autoconf}
@@ -82,8 +84,10 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README src/manual
+%doc AUTHORS ChangeLog README TODO src/manual
 %attr(2755,root,games) %{_bindir}/lmarbles
 %{_datadir}/lmarbles
-%{_mandir}/man6/*
+%{_desktopdir}/lmarbles.desktop
+%{_pixmapsdir}/lmarbles48.gif
+%{_mandir}/man6/lmarbles.6*
 %attr(664,root,games) %config(noreplace) %verify(not md5 mtime size) /var/games/%{name}.prfs
