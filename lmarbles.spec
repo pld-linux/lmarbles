@@ -52,7 +52,7 @@ ficar mais interessante, há alguns obstáculos como caminhos de mão
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %{__perl} -pi -e 's@^inst_dir="\$datadir/games/lmarbles"@inst_dir="\$datadir/lmarbles"@' \
 	configure.in
